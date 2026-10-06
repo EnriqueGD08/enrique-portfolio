@@ -15,3 +15,19 @@ mainNav?.querySelectorAll("a").forEach((link) => {
 
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+
+const scrollProgressBar = document.querySelector(".scroll-progress-bar");
+const scrollProgressMarker = document.querySelector(".scroll-progress-marker");
+
+const updateScrollProgress = () => {
+  if (!scrollProgressBar) return;
+
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+  scrollProgressBar.style.width = `${Math.min(progress, 100)}%`;
+  if (scrollProgressMarker) scrollProgressMarker.style.left = `${Math.min(progress, 100)}%`;
+};
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
+updateScrollProgress();
