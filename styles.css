@@ -35,7 +35,12 @@ button { color: inherit; font: inherit; }
 .main-nav a { transition: color .2s ease; }
 .main-nav a:hover, .main-nav a:focus-visible { color: var(--ink); }
 .nav-cta { color: var(--ink); font-weight: 600; }
-.nav-cta span, .text-link span, .contact-email span { color: var(--purple); margin-left: .4rem; }
+.nav-cta .arrow, .text-link .arrow, .contact-email .arrow { color: var(--purple); margin-left: .4rem; }
+.arrow { position: relative; display: inline-block; width: .75em; height: .75em; color: currentColor; vertical-align: -.08em; }
+.arrow-up-right::before { content: ""; position: absolute; top: .02em; right: .02em; width: .48em; height: .48em; border-top: .12em solid currentColor; border-right: .12em solid currentColor; }
+.arrow-up-right::after { content: ""; position: absolute; top: .32em; left: .05em; width: .78em; height: .12em; border-radius: 1em; background: currentColor; transform: rotate(-45deg); transform-origin: left center; }
+.arrow-down::before { content: ""; position: absolute; right: .08em; bottom: .02em; width: .48em; height: .48em; border-right: .12em solid currentColor; border-bottom: .12em solid currentColor; transform: rotate(45deg); }
+.arrow-down::after { content: ""; position: absolute; top: .04em; left: .32em; width: .12em; height: .78em; border-radius: 1em; background: currentColor; }
 .menu-toggle { display: none; border: 0; background: transparent; padding: .5rem; cursor: pointer; }
 
 .hero { min-height: 650px; display: grid; grid-template-columns: 1fr .8fr; align-items: center; gap: 4rem; padding: 5rem 0 7rem; }
@@ -113,7 +118,7 @@ h1 em, h2 em { color: var(--purple); font-style: normal; }
 .capability-group h3 { margin: 0 0 1.3rem; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
 .capability-group ul { list-style: none; padding: 0; margin: 0; }
 .capability-group li { display: flex; justify-content: space-between; gap: 1rem; padding: .65rem 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
-.capability-group li::before { content: "↳"; margin-right: .4rem; color: var(--purple); }.capability-group small { color: var(--purple); }
+.capability-group li::before { content: ""; width: .55em; height: .55em; margin: .15em .55rem 0 .1em; border-left: .12em solid var(--purple); border-bottom: .12em solid var(--purple); transform: rotate(-45deg); flex: 0 0 auto; }.capability-group small { color: var(--purple); }
 
 .contact { padding: 6rem 0 7rem; border-top: 1px solid var(--line); }
 .contact-header { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; }
