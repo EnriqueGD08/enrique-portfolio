@@ -510,6 +510,12 @@ h2 em {
   font-weight: 600;
   white-space: nowrap;
 }
+/* Varios botones en una tarjeta (p. ej. "Jugar" y "Ver código") */
+.project-actions {
+  display: flex;
+  align-self: center;
+  gap: .6rem;
+}
 .project-link span {
   margin-left: .35rem;
   color: var(--purple);
@@ -1216,7 +1222,8 @@ h1 em {
     grid-column: 1;
     grid-row: 1;
   }
-  .project-link {
+  .project-link,
+  .project-actions {
     grid-column: 1 / -1;
     grid-row: 2;
   }
