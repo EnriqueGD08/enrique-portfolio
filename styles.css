@@ -966,6 +966,14 @@ h1 em {
   border-color: var(--purple);
   color: #fff;
 }
+/* Proyecto sin enlace público: etiqueta apagada que no reacciona al hover de la tarjeta */
+.project-card:hover .project-link-private,
+.project-link-private {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
 
 /* ---- Formación: tarjeta ---- */
 .education-card {
