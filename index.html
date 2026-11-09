@@ -1,4 +1,30 @@
 <!doctype html>
+<!--
+  index.html
+  ---------------------------------------------------------------------------
+  Proyecto:    Portfolio personal 2026 (sitio estático, sin dependencias)
+  Autor:       Enrique Gómez Díaz
+  Mail:        enriquegd2004@gmail.com
+  Web:         https://github.com/EnriqueGD08
+  Fecha:       creación 2026-10-06 · última modificación 2026-11-09
+  Versión:     1.0
+
+  Descripción: página única con la presentación profesional de Enrique Gómez
+               Díaz: sobre mí, experiencia, proyectos, formación, capacidades
+               y contacto.
+
+  Estructura:  index.html (contenido) · styles.css (diseño) · script.js
+               (comportamiento) · assets/ (imágenes y logotipo).
+
+  Principios:  - Separación de responsabilidades (SRP): HTML solo contiene el
+                 contenido y su significado; el aspecto está en el CSS y la
+                 interacción en el JS.
+               - HTML semántico (header, nav, main, section, article, footer).
+               - Accesibilidad: textos alternativos, aria-label, enlaces con
+                 nombre accesible y la web funciona sin JavaScript.
+               - Sin dependencias: solo la tipografía Manrope de Google Fonts.
+  ---------------------------------------------------------------------------
+-->
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -8,7 +34,20 @@
       content="Portfolio de Enrique Gómez Díaz, ingeniero informático especializado en desarrollo Full Stack, inteligencia artificial y análisis de datos."
     />
     <meta name="theme-color" content="#0b0a0f" />
+    <meta name="author" content="Enrique Gómez Díaz" />
+
+    <!-- Vista previa al compartir el enlace (redes sociales, mensajería) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Enrique Gómez Díaz — Ingeniero Informático" />
+    <meta
+      property="og:description"
+      content="Desarrollo Full Stack, inteligencia artificial y análisis de datos. Portfolio de proyectos y experiencia."
+    />
+
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
     <title>Enrique Gómez Díaz — Ingeniero Informático</title>
+    <!-- Tipografía Manrope (se precarga la conexión para acelerar la carga) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,13 +55,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- defer: el script se ejecuta cuando el HTML ya está cargado -->
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Barra de progreso de lectura (decorativa; la rellena script.js) -->
     <div class="scroll-progress" aria-hidden="true">
       <div class="scroll-progress-bar"></div>
       <div class="scroll-progress-marker"></div>
     </div>
+    <!-- Cabecera fija: logotipo y navegación principal (menú hamburguesa en móvil) -->
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Volver al inicio">
         <img src="assets/logo.svg" alt="EGD." />
@@ -41,6 +83,7 @@
     </header>
 
     <main>
+      <!-- Inicio: titular, llamadas a la acción y retrato -->
       <section class="hero section-shell" id="inicio">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-line"></span> Ingeniero informático</p>
@@ -64,6 +107,7 @@
         </div>
       </section>
 
+      <!-- 01 · Sobre mí -->
       <section class="statement section-shell" id="sobre-mi">
         <p class="section-kicker">01 / Sobre mí</p>
         <div class="statement-grid">
@@ -84,6 +128,7 @@
         </div>
       </section>
 
+      <!-- 02 · Experiencia: línea de tiempo, de lo más reciente a lo más antiguo -->
       <section class="experience section-shell" id="experiencia">
         <div class="section-heading">
           <p class="section-kicker">02 / Experiencia</p>
@@ -146,11 +191,12 @@
         </div>
       </section>
 
+      <!-- 03 · Proyectos: una tarjeta por proyecto -->
       <section class="projects section-shell" id="proyectos">
         <div class="section-heading projects-heading">
           <p class="section-kicker">03 / Proyectos</p>
           <h2>Ideas que se<br /><em>convierten en producto.</em></h2>
-          <p class="section-description">Una selección de proyectos desarrollados. Estos textos son provisionales y puedes sustituirlos por tus proyectos reales.</p>
+          <p class="section-description">Una selección de proyectos desarrollados.</p>
         </div>
         <div class="project-list">
           <article class="project-card">
@@ -191,6 +237,7 @@
         </div>
       </section>
 
+      <!-- 04 · Formación académica -->
       <section class="education section-shell" id="formacion">
         <div class="education-card">
           <div>
@@ -205,6 +252,7 @@
         </div>
       </section>
 
+      <!-- 05 · Capacidades: habilidades e idiomas -->
       <section class="capabilities section-shell">
         <div class="section-heading">
           <p class="section-kicker">05 / Capacidades</p>
@@ -232,6 +280,7 @@
         </div>
       </section>
 
+      <!-- 06 · Contacto -->
       <section class="contact section-shell" id="contacto">
         <div class="contact-header">
           <p class="section-kicker">06 / Contacto</p>
@@ -253,6 +302,7 @@
       </section>
     </main>
 
+    <!-- Pie de página: el año lo actualiza script.js -->
     <footer class="site-footer section-shell">
       <p>© <span id="current-year">2026</span> Enrique Gómez Díaz</p>
       <p>Diseñado para seguir avanzando <img class="arrow arrow-up-right" src="assets/arrow.svg" alt="" aria-hidden="true" /></p>
