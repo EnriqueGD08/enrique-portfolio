@@ -2,6 +2,8 @@
 
 Portfolio personal de **Enrique Gómez Díaz**, ingeniero informático (Universidad de La Laguna) especializado en desarrollo Full Stack, inteligencia artificial y análisis de datos.
 
+**Ver en vivo:** https://enriquegd08.github.io/enrique-portfolio/
+
 Es un sitio **estático**: HTML, CSS y JavaScript sin frameworks ni pasos de compilación. La única dependencia externa es la tipografía [Manrope](https://fonts.google.com/specimen/Manrope) de Google Fonts.
 
 ## Contenido de la página
