@@ -1033,6 +1033,9 @@ h1 em {
 .contact-details a:hover {
   color: var(--purple-soft);
 }
+.phone-link .arrow {
+  margin-left: .4rem;
+}
 
 /* ---- Barra de progreso: burbuja con el porcentaje ---- */
 .scroll-progress {
